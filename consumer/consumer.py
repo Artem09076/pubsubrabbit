@@ -24,7 +24,7 @@ def callback(channel, method, properties, body: bytes):
         if not redis_client.setnx(f'message_id:{message_id}', 'processing'):
             return
         
-        file.write(body.decode() + '\n')
+        file.write(message + '\n')
         redis_client.setex(f"message_res:{message_id}", 3600, 'Processed')
         redis_client.set(f"message_status:{message_id}", "processed")
 
