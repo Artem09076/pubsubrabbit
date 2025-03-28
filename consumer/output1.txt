@@ -1,4 +1,0 @@
-This is a test message.
-RabbitMQ Pub/Sub example.
-Good luck with your project!
-RabbitMQ Pub/Sub example.

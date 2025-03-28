@@ -10,7 +10,7 @@ def publish_masseges() -> None:
 
     channel.exchange_declare(exchange='publisher', exchange_type=ExchangeType.fanout)
 
-    with open('pubisher/input.txt', 'r') as file:
+    with open('publisher/input.txt', 'r') as file:
         for line in file:
             message = line.rstrip()
             channel.basic_publish(exchange='publisher', routing_key='', body=message)
